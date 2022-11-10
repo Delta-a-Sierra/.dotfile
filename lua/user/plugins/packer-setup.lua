@@ -55,4 +55,11 @@ return require("packer").startup(function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
+
+	-- Auto Closing
+	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
+	-- Git Integration
+	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 end)
