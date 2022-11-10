@@ -21,12 +21,20 @@ mason_lspconfig.setup({
 		"tsserver",
 		"html",
 		"cssls",
+		"emmet_ls",
 		"tailwindcss",
 		"tflint",
 		"rust_analyzer",
 		"prismals",
 		"pyright",
 	},
+	automatic_installation = true,
 })
 
-mason_null_ls.setup({})
+mason_null_ls.setup({
+	ensure_installed = {
+		"prettier",
+		"stylua",
+	},
+	automatic_installation = true,
+})
