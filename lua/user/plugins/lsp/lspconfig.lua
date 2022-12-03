@@ -74,8 +74,7 @@ lspconfig["emmet_ls"].setup({
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
-local servers =
-{ "html", "cssls", "tailwindcss", "prismals", "tflint", "tsserver", "pyright", "jsonls", "golangci_lint_ls" }
+local servers = { "html", "cssls", "tailwindcss", "prismals", "tflint", "tsserver", "pyright", "jsonls", "gopls" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = capabilities,

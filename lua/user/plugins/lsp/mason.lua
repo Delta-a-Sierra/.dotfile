@@ -27,6 +27,7 @@ mason_lspconfig.setup({
 		"rust_analyzer",
 		"prismals",
 		"pyright",
+		"gopls",
 	},
 	automatic_installation = true,
 })
@@ -35,6 +36,8 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"prettier",
 		"stylua",
+		"gofumpt",
+		"goimports",
 	},
 	automatic_installation = true,
 })
