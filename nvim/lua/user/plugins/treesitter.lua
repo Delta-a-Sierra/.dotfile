@@ -25,7 +25,7 @@ treesitter.setup({
 		"css",
 		"markdown",
 		"bash",
-		"lua",
+		-- "lua",
 		"vim",
 		"dockerfile",
 	},
