@@ -190,4 +190,26 @@ bar {
         status_command i3status
 }
 
+# colors
+set $bg #282A2E
+set $bg-alt #373B41
+set $fg #C5C8C6
+set $primary #F0C674
+set $secondary #8ABEB7
+set $alert #A54242
+set $disabled #707880
+
+
+# class                 border  backgr. text    
+client.focused          $primary $primary $bg 
+client.focused_inactive $primary $bg #ffffff 
+client.unfocused        $bg-alt $bg-alt #ffffff
+client.urgent           $primary $alert #ffffff
+
+# Set Wallpaper
+exec_always feh --randomize --bg-fill ~/Pictures/wallpapers/* 
+
+# set transparent BG
+exec_always compton
+
 exec setxkbmap gb
