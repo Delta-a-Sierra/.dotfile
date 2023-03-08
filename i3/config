@@ -23,6 +23,10 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Start Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 exec --no-startup-id betterlockscreen -w dim
@@ -30,13 +34,13 @@ exec --no-startup-id betterlockscreen -u ~/Pictures/wallpapers/* --fx dim
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --fx dim 
-
+exec_always setxkbmap gb
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-gaps inner 5px
-gaps outer 5px
+gaps inner 8px
+# gaps outer 2px
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -104,7 +108,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+r layout stacking
+# bindsym $mod+r layout stacking
 bindsym $mod+w layout tabbed
 #bindsym $mod+f layout toggle split
 
@@ -145,12 +149,12 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-workspace $ws1 output DP-2 eDP-1
-workspace $ws2 output DP-2 eDP-1
-workspace $ws3 output DP-2 eDP-1
-workspace $ws4 output DP-2 eDP-1
-workspace $ws5 output DP-2 eDP-1
-workspace $ws6 output DP-2 eDP-1
+workspace $ws1 output DP-2 DP-3 DP-4 eDP-1
+workspace $ws2 output DP-2 DP-3 DP-4 eDP-1
+workspace $ws3 output DP-2 DP-3 DP-4 eDP-1
+workspace $ws4 output DP-2 DP-3 DP-4 eDP-1
+workspace $ws5 output DP-2 DP-3 DP-4 eDP-1
+workspace $ws6 output DP-2 DP-3 DP-4 eDP-1
 workspace $ws9 output eDP-1
 
 # move focused container to workspace
@@ -194,16 +198,17 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+p mode "default"
+        bindsym $mod+r mode "default"
 }
 
-bindsym $mod+p mode "resize"
+bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+        # status_command i3status
+# }
+
 
 # colors
 set $bg #282A2E
