@@ -3,3 +3,4 @@ if not status then
 	print("Colorscheme not found!") -- print error if colorscheme not installed
 	return
 end
+vim.g.nightflyTransparent = true
