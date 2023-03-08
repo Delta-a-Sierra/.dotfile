@@ -17,14 +17,13 @@ mason.setup({})
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"sumneko_lua",
+		"lua-language-server",
 		"tsserver",
 		"html",
 		"cssls",
 		"emmet_ls",
 		"tailwindcss",
 		"tflint",
-		"rust_analyzer",
 		"prismals",
 		"pyright",
 		"gopls",
