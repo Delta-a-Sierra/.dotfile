@@ -17,7 +17,7 @@ mason.setup({})
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"lua-language-server",
+		"lua_ls",
 		"tsserver",
 		"html",
 		"cssls",
