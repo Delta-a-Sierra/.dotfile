@@ -5,7 +5,7 @@ opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 12
 opt.wrap = false
-opt.colorcolumn = "90"
+-- opt.colorcolumn = "90"
 
 -- Tabs + Indentation
 opt.tabstop = 2
@@ -40,3 +40,6 @@ opt.splitbelow = true
 
 -- Deletion
 opt.iskeyword:append("-")
+
+-- colorscheme
+vim.g.nightflyTransparent = true
