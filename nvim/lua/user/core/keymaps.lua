@@ -1,11 +1,13 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap 
-local opts= { silent = true, noremap = true }
+local keymap = vim.keymap
+local opts = { silent = true, noremap = true }
 local term_opts = { silent = true }
 
 -- Normal --
+-- quick save
+keymap.set("n", "<leader>w", ":w!<cr>")
 -- Better window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-j>", "<C-w>j", opts)
@@ -35,6 +37,19 @@ keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap.set("v", "p", '"_dP', opts)
+
+-- Copy and Paste
+-- -- Yank into system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y') -- yank motion
+vim.keymap.set({ "n", "v" }, "<leader>Y", '"+Y') -- yank line
+
+-- Delete into system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>d", '"+d') -- delete motion
+vim.keymap.set({ "n", "v" }, "<leader>D", '"+D') -- delete line
+
+-- Paste from system clipboard
+vim.keymap.set("n", "<leader>p", '"+p') -- paste after cursor
+vim.keymap.set("n", "<leader>P", '"+P') -- paste before cursor
 
 -- Visual Block --
 -- Move text up and down
